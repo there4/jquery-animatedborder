@@ -2,14 +2,13 @@
  * jquery.animatedborder. Animated borders on elements
  *
  * Copyright (c) 2010 Craig Davis
- * http://there4development.com
+ * https://github.com/there4/jquery-animatedborder
  *
  * Licensed under MIT
  * http://www.opensource.org/licenses/mit-license.php
  *
  * Launch  : 2/20/2010
- * Version : 0.2.0
- * Released: 2/21/2010
+ * Version : 0.3.0
  * Debug: jquery.animatedborder.js
  */
 
