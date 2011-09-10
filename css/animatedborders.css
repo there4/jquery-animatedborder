@@ -1,0 +1,19 @@
+.animatedBorderSprite        {
+                               position: absolute;
+                               margin: 0;
+                               background: url(stripe.gif)
+                             }
+
+.animatedBorderSprite-top    {
+                               -moz-border-radius-topleft: 2px;
+                               -webkit-border-radius-topleft: 2px;
+                               -moz-border-radius-topright: 2px;
+                               -webkit-border-radius-topright: 2px;
+                             }
+
+.animatedBorderSprite-bottom {
+                               -moz-border-radius-bottomleft: 2px;
+                               -webkit-border-radius-bottomleft: 2px;
+                               -moz-border-radius-bottomright: 2px;
+                               -webkit-border-radius-bottomright: 2px;
+                             }
