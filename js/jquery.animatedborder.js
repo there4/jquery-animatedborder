@@ -84,7 +84,6 @@
                               },
                               function() {
                                   $(this).children('.animatedBorderSprite').each(function(index) {
-                                      console.log($(this).css('opacity'));
                                       if ($(this).css('display') == 'block' && Math.round($(this).css('opacity') * 10) / 10 == opacity) {
                                           $(this).css('opacity', 1).hide();
                                       }
