@@ -15,10 +15,10 @@ config.init({
     'dist/jquery.animatedborder.min.js': ['<banner>', 'dist/jquery.animatedborder.js']
   },
   qunit: {
-    files: ['test/*.html']
+    files: ['test/**/*.html']
   },
   lint: {
-    files: ['grunt.js', 'src/*.js', 'test/*.js']
+    files: ['grunt.js', 'src/*.js', 'test/**/*.js']
   },
   watch: {
     files: '<config:lint.files>',

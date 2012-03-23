@@ -13,14 +13,4 @@
         strictEqual(this.elems.animatedBorder(), this.elems, 'should be chaninable');
     });
 
-    test("can render divs", function() {
-      
-        $('div.alpha').animatedBorder({size : 1, color : 'red'});
-        
-        ok(
-            $('.animatedBorderSprite').length,
-            "Div is rendered"
-        );
-    });
-
 }(jQuery));
