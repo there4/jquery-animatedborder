@@ -5,19 +5,21 @@ Animated borders for any block level element.
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/there4/animatedborder/master/dist/animatedborder.min.js
-[max]: https://raw.github.com/there4/animatedborder/master/dist/animatedborder.js
+[min]: https://raw.github.com/there4/animatedborder/master/dist/jquery.animatedborder.min.js
+[max]: https://raw.github.com/there4/animatedborder/master/dist/jquery.animatedborder.js
 
 In your web page:
 
 ```html
+
 <script src="jquery.js"></script>
-<script src="dist/animatedborder.min.js"></script>
+<script src="dist/jquery.animatedborder.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $('div.bordered').animatedBorder({size : 1, color : 'red'});
 });
 </script>
+
 ```
 
 ## Documentation
