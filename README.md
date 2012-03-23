@@ -1,9 +1,39 @@
 # Animated Border
 
-Animated borders for any block level element. This plugin creates an animated border with configurable thickness and color.
+Animated borders for any block level element.
 
-It does this by adding 4 absolutely positioned divs around the element. The 4 highlight divs use an animated gif with white blocks and transparent areas. This allows the background of the div to be visible and be treated as the color of the animated border.
+## Getting Started
+Download the [production version][min] or the [development version][max].
 
-# Known Issues
+[min]: https://raw.github.com/there4/animatedborder/master/dist/animatedborder.min.js
+[max]: https://raw.github.com/there4/animatedborder/master/dist/animatedborder.js
 
-**Background patterns** are not handled with the default stripe.gif file. The plugin uses the the background color of the divs to make the border color. This means that the non-transparent area of the checkerboard has to match the background color of the page for the illusion to work. If you had a page with surrounding elements under the border, or you had a non white background, you should create a new animated gif with blocks that are transparent and the desired border color.
+In your web page:
+
+```html
+<script src="jquery.js"></script>
+<script src="dist/animatedborder.min.js"></script>
+<script>
+jQuery(function($) {
+  $.awesome(); // "awesome"
+});
+</script>
+```
+
+## Documentation
+_(Coming soon)_
+
+## Examples
+_(Coming soon)_
+
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
+
+_Also, please don't edit files in the "dist" subdirectory as they are generated via grunt. You'll find source code in the "src" subdirectory!_
+
+## Release History
+_(Nothing yet)_
+
+## License
+Copyright (c) 2012 Craig Davis  
+Licensed under the MIT license.
