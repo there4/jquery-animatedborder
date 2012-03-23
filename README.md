@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/there4/jquery-animatedborder.png?branch=master)](http://travis-ci.org/there4/jquery-animatedborder)
+
 # Animated Border
 
 Animated borders for any block level element.
