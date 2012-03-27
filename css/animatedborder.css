@@ -1,19 +1,27 @@
+.animatedBorder               {
+                                position: relative;
+                             }
+
 .animatedBorderSprite        {
-                               position: absolute;
-                               margin: 0;
-                               background: url(stripe.gif)
+                                position: absolute;
+                                margin: 0;
+                                background: url(stripe.gif)
                              }
 
 .animatedBorderSprite-top    {
-                               -moz-border-radius-topleft: 2px;
-                               -webkit-border-radius-topleft: 2px;
-                               -moz-border-radius-topright: 2px;
-                               -webkit-border-radius-topright: 2px;
+                                -webkit-border-top-left-radius: 2px;
+                                -webkit-border-top-right-radius: 2px;
+                                -moz-border-radius-topleft: 2px;
+                                -moz-border-radius-topright: 2px;
+                                border-top-left-radius: 2px;
+                                border-top-right-radius: 2px;
                              }
 
 .animatedBorderSprite-bottom {
-                               -moz-border-radius-bottomleft: 2px;
-                               -webkit-border-radius-bottomleft: 2px;
-                               -moz-border-radius-bottomright: 2px;
-                               -webkit-border-radius-bottomright: 2px;
+                                -webkit-border-bottom-right-radius: 2px;
+                                -webkit-border-bottom-left-radius: 2px;
+                                -moz-border-radius-bottomright: 2px;
+                                -moz-border-radius-bottomleft: 2px;
+                                border-bottom-right-radius: 2px;
+                                border-bottom-left-radius: 2px;
                              }

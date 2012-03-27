@@ -5,15 +5,20 @@
 <title>jQuery.animatedBorder.js</title>
 
 <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
-<script src="../dist/jquery.animatedborder.min.js" type="text/javascript"></script>
+<script src="../dist/jquery.animatedborder.js" type="text/javascript"></script>
 
 <link rel="stylesheet" media="screen" href="../css/animatedborder.css"> 
 
 <style type="text/css">
 
-.alpha, .bravo, .charlie {
+#container {
+  /* Set tall so we can test scrolling */
+  padding: 5em 0 200em;
+}
+
+.alpha, .bravo, .charlie, .delta {
   width: 100px; height: 100px;
-  margin: 5px; padding: 5px;
+  margin: 10px; padding: 8px;
   float: left;
   border: 1px solid black;
   background: #ffffff;
@@ -34,14 +39,15 @@
 <script type="text/javascript">
 
 $(function() {
-  $('div.alpha').animatedBorder({size : 1, color : 'red'});
+  $('div.alpha').animatedBorder({size: 1, color: 'red'});
 
   $('div.bravo').click(function(){
     $(this).animatedBorder();
     return false;
   });
 
-  $('div.charlie').animatedBorder({size : 6, color : '#FFCC66'});
+  $('div.charlie').animatedBorder({size: 6, color: '#FFCC66'});
+
 });
 
 </script>

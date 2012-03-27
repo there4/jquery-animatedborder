@@ -34,13 +34,14 @@
             });
         },
         animatedBorder: function(options) {
-
-
             var defaults = {
                 size: 2,
                 color: '#6699CC',
                 hover: false
-            };
+            },
+            opacity = 0.3,
+            size;
+            options = $.extend(defaults, options);
 
             return this.each(function() {
                 switch (options) {
@@ -55,15 +56,12 @@
                         $(this).unbind('mouseenter mouseleave');
                         break;
                     default:
-                        options = $.extend(defaults, options);
-                        var o = options;
                         if ($(this).hasClass('animatedBorder')) {
                             $('.animatedBorderSprite', $(this)).remove();
                             $(this).removeClass('animatedBorder');
                             return;
                         }
-                        if (o.hover) {
-                            var opacity = 0.3;
+                        if (options.hover) {
                             $(this).hover(
                               function() {
                                   $(this).children('.animatedBorderSprite').each(function(index) {
@@ -81,61 +79,66 @@
                               }
                             );
                         }
-
+                        
+                        // The element needs to get a position:relative rule
+                        // so that the absolutely positioned borders will work
                         $(this).addClass('animatedBorder');
-                        var offset = $(this).position(),
+                        
+                        // This is the size of the element, we use this to 
+                        // calculate the width of the border elements
                         size = {
-                            height: $(this).outerHeight(),
-                            width: $(this).outerWidth()
+                            height: $(this).innerWidth(),
+                            width: $(this).innerWidth()
                         };
+                        
+                        // Top line
                         $(this).append(
                           $('<div />')
-                            .addClass('animatedBorderSprite')
-                            .addClass('animatedBorderSprite-top')
+                            .addClass('animatedBorderSprite animatedBorderSprite-top')
                             .css({
-                                'top': -o.size,
-                                'left': 0,
-                                'width': '100%',
-                                'height': o.size,
-                                'background-color': o.color
+                                'top': -options.size,
+                                'left': -options.size,
+                                'width': size.width + (2*options.size),
+                                'height': options.size,
+                                'background-color': options.color
                             })
-                          );
+                        );
+                        // Bottom Line
                         $(this).append(
                           $('<div />')
-                            .addClass('animatedBorderSprite')
-                            .addClass('animatedBorderSprite-bottom')
+                            .addClass('animatedBorderSprite animatedBorderSprite-bottom')
                             .css({
-                                'bottom': -o.size,
-                                'left': 0,
-                                'width': '100%',
-                                'height': o.size,
-                                'background-color': o.color
+                                'bottom': -options.size,
+                                'left': -options.size,
+                                'width': size.width + (2*options.size),
+                                'height': options.size,
+                                'background-color': options.color
                             })
-                          );
-                        $(this).append(
-                          $('<div />')
-                            .addClass('animatedBorderSprite')
-                            .css({
-                                'top': 0,
-                                'left': 0,
-                                'width': o.size,
-                                'height': '100%',
-                                'background-color': o.color
-                            })
-                          );
+                        );
+                        // Left Line
                         $(this).append(
                           $('<div />')
                             .addClass('animatedBorderSprite')
                             .css({
                                 'top': 0,
-                                'right': 0,
-                                'width': o.size,
-                                'height': '100%',
-                                'background-color': o.color
+                                'left': -options.size,
+                                'width': options.size,
+                                'height': size.height,
+                                'background-color': options.color
                             })
-                          );
-
-
+                        );
+                        // Right Line
+                        $(this).append(
+                          $('<div />')
+                            .addClass('animatedBorderSprite')
+                            .css({
+                                'top': 0,
+                                'right': -options.size,
+                                'width': options.size,
+                                'height': size.height,
+                                'background-color': options.color
+                            })
+                        );
                 }
             });
 
