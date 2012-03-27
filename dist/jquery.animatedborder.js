@@ -46,40 +46,29 @@
             return this.each(function() {
                 switch (options) {
                     case 'hide':
-                        $(this).children('.animatedBorderSprite').fadeOut();
+                        $(this).children('.animatedBorderSprite').fadeOut('slow');
                         break;
+                        
                     case 'show':
-                        $(this).children('.animatedBorderSprite').css('opacity', 1).fadeIn();
+                        $(this).children('.animatedBorderSprite').fadeIn('fast');
                         break;
+                        
                     case 'destory':
                         $(this).children('.animatedBorderSprite').remove();
                         $(this).unbind('mouseenter mouseleave');
                         break;
+                        
                     default:
+                        // we can call .animatedBorder() a second time to remove the border
+                        // this is to preserve backwards compatibility
                         if ($(this).hasClass('animatedBorder')) {
                             $('.animatedBorderSprite', $(this)).remove();
                             $(this).removeClass('animatedBorder');
                             return;
                         }
-                        if (options.hover) {
-                            $(this).hover(
-                              function() {
-                                  $(this).children('.animatedBorderSprite').each(function(index) {
-                                      if ($(this).css('display') === 'none') {
-                                          $(this).show().css('opacity', opacity);
-                                      }
-                                  });
-                              },
-                              function() {
-                                  $(this).children('.animatedBorderSprite').each(function(index) {
-                                      if ($(this).css('display') === 'block' && Math.round($(this).css('opacity') * 10) / 10 === opacity) {
-                                          $(this).css('opacity', 1).hide();
-                                      }
-                                  });
-                              }
-                            );
-                        }
                         
+                        // Setup the borders
+                        // ----
                         // The element needs to get a position:relative rule
                         // so that the absolutely positioned borders will work
                         $(this).addClass('animatedBorder');
@@ -139,6 +128,20 @@
                                 'background-color': options.color
                             })
                         );
+                        
+                        
+                        // If hovering is turned on, we attach events and then hide the borders
+                        if (options.hover) {
+                            $(this).hover(
+                              function() {
+                                  $(this).children('.animatedBorderSprite').fadeIn('fast');
+                              },
+                              function() {
+                                  $(this).children('.animatedBorderSprite').fadeOut('slow');
+                              }
+                            );
+                            $(this).children('.animatedBorderSprite').hide();
+                        }
                 }
             });
 

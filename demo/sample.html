@@ -11,9 +11,35 @@
 
 <style type="text/css">
 
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  background-color: #ffffff;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+h1, h2 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
 #container {
   /* Set tall so we can test scrolling */
   padding: 5em 0 200em;
+  margin: 0 auto;
+  width: 960px;
 }
 
 .alpha, .bravo, .charlie, .delta {
@@ -30,24 +56,28 @@
 
 <body>
 
+
   <div id="container">
+    <h1>jQuery Animated Borders</h1>
     <div class="alpha">Single pixel</div>
     <div class="bravo"><a href="">Toggle highlight</a></div>
     <div class="charlie">Fat</div>
+    <div class="delta">Hover</div>
   </div>
 
 <script type="text/javascript">
 
 $(function() {
-  $('div.alpha').animatedBorder({size: 1, color: 'red'});
+  $('div.alpha').animatedBorder({size: 1, color: '#A92546'});
 
   $('div.bravo').click(function(){
-    $(this).animatedBorder();
+    $(this).animatedBorder({size: 1, color: '#628179'});
     return false;
   });
 
-  $('div.charlie').animatedBorder({size: 6, color: '#FFCC66'});
+  $('div.charlie').animatedBorder({size: 6, color: '#F4C850'});
 
+  $('div.delta').animatedBorder({size: 2, color: '#4E7CB1', hover: true});
 });
 
 </script>
