@@ -26,6 +26,7 @@ config.init({
   },
   jshint: {
     options: {
+      onevar: true,
       curly: true,
       eqeqeq: true,
       immed: true,
