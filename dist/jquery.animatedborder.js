@@ -1,6 +1,16 @@
-/*! Animated Border - v0.6.0 - 3/27/2012
+/*! Animated Border - v0.6.0 - 6/30/2012
 * https://github.com/there4/jquery-animatedborder
 * Copyright (c) 2012 Craig Davis; Licensed MIT */
+
+/*
+ * jquery.animatedborder. Animated borders on elements
+ *
+ * Copyright (c) 2010 Craig Davis
+ * https://github.com/there4/jquery-animatedborder
+ *
+ * Licensed under MIT
+ * http://www.opensource.org/licenses/mit-license.php
+ */
 
 /**
  * Adds an animated border around any block level element.
@@ -53,7 +63,7 @@
                         $(this).children('.animatedBorderSprite').fadeIn('fast');
                         break;
                         
-                    case 'destory':
+                    case 'destroy':
                         $(this).children('.animatedBorderSprite').remove();
                         $(this).unbind('mouseenter mouseleave');
                         break;
@@ -76,7 +86,7 @@
                         // This is the size of the element, we use this to 
                         // calculate the width of the border elements
                         size = {
-                            height: $(this).innerWidth(),
+                            height: $(this).innerHeight(),
                             width: $(this).innerWidth()
                         };
                         

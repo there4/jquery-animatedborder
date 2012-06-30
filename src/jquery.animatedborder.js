@@ -6,10 +6,6 @@
  *
  * Licensed under MIT
  * http://www.opensource.org/licenses/mit-license.php
- *
- * Launch  : 2/20/2010
- * Version : 0.3.0
- * Debug: jquery.animatedborder.js
  */
 
 /**
@@ -63,7 +59,7 @@
                         $(this).children('.animatedBorderSprite').fadeIn('fast');
                         break;
                         
-                    case 'destory':
+                    case 'destroy':
                         $(this).children('.animatedBorderSprite').remove();
                         $(this).unbind('mouseenter mouseleave');
                         break;
@@ -86,7 +82,7 @@
                         // This is the size of the element, we use this to 
                         // calculate the width of the border elements
                         size = {
-                            height: $(this).innerWidth(),
+                            height: $(this).innerHeight(),
                             width: $(this).innerWidth()
                         };
                         
