@@ -26,7 +26,7 @@
     "grunt": "~0.3.11"
   },
   "devDependencies": {},
-  "keywords": [],
+  "keywords": ["jQuery", "border", "animated border"],
   "scripts": {
     "test": "grunt test"
   }
