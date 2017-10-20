@@ -1,7 +1,3 @@
-/*! Animated Border - v0.6.0 - 6/30/2012
-* https://github.com/there4/jquery-animatedborder
-* Copyright (c) 2012 Craig Davis; Licensed MIT */
-
 /*
  * jquery.animatedborder. Animated borders on elements
  *
