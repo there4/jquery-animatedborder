@@ -39,8 +39,9 @@ _Also, please don't edit files in the `dist` subdirectory as they are generated 
 
 ## Release History
 
-* Sep 10, 2011 - Initial release on github, relocated from jQuery plugins.
-* Mar 23, 2012 - Update with a new build system to run automated tests
+* 1.0.0 - Modernized testing framework and upgraded grunt.
+* 0.6.0 - Update with a new build system to run automated tests
+* 0.5.0 - Sep 10, 2011 - Initial release on github, relocated from jQuery plugins.
 
 ## License
 Copyright (c) 2012 Craig Davis
