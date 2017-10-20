@@ -1,13 +1,4 @@
 /*global module*/
-/*
- * grunt
- * https://github.com/cowboy/grunt
- *
- * Copyright (c) 2012 "Cowboy" Ben Alman
- * Licensed under the MIT license.
- * http://benalman.com/about/license/
- */
-
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -28,10 +19,11 @@ module.exports = function(grunt) {
       }
     },
 
-    min: {
+    uglify: {
       dist: {
-        src: ['<banner:meta.banner>', 'dist/jquery.animatedborder.js'],
-        dest: 'dist/jquery.animatedborder.min.js'
+        files: {
+          'dist/jquery.animatedborder.min.js': ['<banner:meta.banner>', 'dist/jquery.animatedborder.js']
+        }
       }
     },
 
@@ -39,16 +31,13 @@ module.exports = function(grunt) {
       all: ['test/**/*.html']
     },
 
-    lint: {
-      files: ['grunt.js', 'src/*.js', 'test/**/*.js']
-    },
-
     watch: {
       files: '<config:lint.files>',
-      tasks: 'lint qunit'
+      tasks: ['lint', 'qunit']
     },
 
     jshint: {
+      all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
       options: {
         onevar : true,
         curly  : true,
@@ -60,21 +49,24 @@ module.exports = function(grunt) {
         sub    : true,
         undef  : true,
         eqnull : true,
-        browser: true
-      },
-      globals: {
-        jQuery: true
+        browser: true,
+        globals: {
+          jQuery: true
+        }
       }
-    },
-
-    uglify: {}
+    }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
   // Default task will build for deployment
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 
   // Shortcut to standardize this between my repos, some run jasmine,
   // and some run qunit, some run both.
   grunt.registerTask('test', 'qunit');
-
 };

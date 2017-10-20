@@ -3,6 +3,7 @@
   "title": "Animated Border",
   "description": "Animated borders for any block level element.",
   "version": "0.6.0",
+  "license": "MIT",
   "homepage": "https://github.com/there4/jquery-animatedborder",
   "author": {
     "name": "Craig Davis",
@@ -22,11 +23,22 @@
       "url": "https://github.com/there4/jquery-animatedborder/blob/master/LICENSE-MIT"
     }
   ],
-  "dependencies": {
-    "grunt": "~0.3.11"
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-qunit": "^2.0.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^3.2.1",
+    "qunit": "^1.0.0"
   },
-  "devDependencies": {},
-  "keywords": ["jQuery", "border", "animated border"],
+  "keywords": [
+    "jQuery",
+    "border",
+    "animated border"
+  ],
   "scripts": {
     "test": "grunt test"
   }
