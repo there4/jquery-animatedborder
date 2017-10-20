@@ -2,27 +2,25 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    pkg: '<json:package.json>',
-
-    meta: {
-      banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("m/d/yyyy") %>\n' +
-        '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
-    },
 
     concat: {
       dist: {
-        src: ['<banner:meta.banner>', 'src/jquery.animatedborder.js'],
+        src: ['src/jquery.animatedborder.js'],
         dest: 'dist/jquery.animatedborder.js'
       }
     },
 
     uglify: {
+      options: {
+        banner: '/*! Animated Border - v1.0.0 - ' +
+          '<%= grunt.template.today("m/d/yyyy") %>\n' +
+          '* https://github.com/there4/jquery-animatedborder\n' +
+          '* Copyright (c) <%= grunt.template.today("yyyy") %> Craig Davis' +
+          ' Licensed MIT */'
+      },
       dist: {
         files: {
-          'dist/jquery.animatedborder.min.js': ['<banner:meta.banner>', 'dist/jquery.animatedborder.js']
+          'dist/jquery.animatedborder.min.js': ['dist/jquery.animatedborder.js']
         }
       }
     },

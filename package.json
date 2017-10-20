@@ -2,7 +2,7 @@
   "name": "animatedborder",
   "title": "Animated Border",
   "description": "Animated borders for any block level element.",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "license": "MIT",
   "homepage": "https://github.com/there4/jquery-animatedborder",
   "author": {
